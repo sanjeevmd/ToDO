@@ -1,0 +1,51 @@
+nav {
+    background-color: green;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    div {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-left: 2%;
+        font-size: 26px;
+        color: white;
+    }
+    border-radius: 2%;
+}
+
+.buttonlayout {
+    padding-top: 1%;
+    padding-right: 1%;
+    button {
+        float: right;
+        border-radius: 2px solid;
+        padding-bottom: .5%;
+        padding-top: .5%
+    }
+    button:hover {
+        cursor: pointer;
+    }
+}
+
+.viewall {
+    padding-top: 2%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:hover {
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

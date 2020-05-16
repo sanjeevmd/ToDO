@@ -1,0 +1,70 @@
+<div class="buttonlayout">
+    <button (click)="emit()">{{showBtn}} new Item</button>
+</div>
+
+<!-- table to view the todo list -->
+<table class="viewall">
+    <tr>
+        <th>
+            S.No.
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            Due Date
+        </th>
+    </tr>
+    <!-- index i for serial number -->
+    <tr class="hovertr" (click)="expand(view)" *ngFor="let view of viewall; let i = index;">
+        <td>
+            <del *ngIf="view.isCompleted == true"> 
+                {{i+1}}
+            </del>
+            <span *ngIf="view.isCompleted == false">
+                {{i+1}}
+            </span>
+        </td>
+        <td>
+            <del *ngIf="view.isCompleted == true"> 
+               {{ view.title }}
+            </del>
+            <span *ngIf="view.isCompleted == false">
+                {{ view.title }}
+            </span>
+        </td>
+        <!-- pipes to modify date -->
+        <td>
+            <del *ngIf="view.isCompleted == true">
+                {{ view.dueDate | date:'medium'}}
+            </del>
+            <span *ngIf="view.isCompleted == false">
+                {{ view.dueDate | date:'medium'}}
+            </span>
+        </td>
+        <td>
+            <button (click)="delete(view)" class="del">Delete</button>
+            <button *ngIf="view.isCompleted == false" (click)="complete(view)" class="complete">Complete</button>
+            <button *ngIf="view.isCompleted == true" (click)="inComplete(view)" class="complete">Incomplete</button>
+        </td>
+    </tr>
+</table>
+<!-- div to expand  on click of tr -->
+<div id="myModal" class="modal">
+    <div class="modal-content" *ngIf="expandView == true">
+        <span (click)="spanClick()" class="close">&times;</span>
+        <div class="center"><b>{{view.title}}</b></div>
+        <p>
+            <b>Description : </b> {{view.description}}
+            <br><br>
+            <b>Due Date : </b>{{view.dueDate | date:'medium'}}
+            <br><br>
+            <b>Created Date: </b> {{view.createdDate | date:'medium'}}
+            <br><br>
+            <b>Modified Date: </b> {{view.modifiedDate| date:'medium'}}
+            <br><br>
+            <b>Status</b> : <span *ngIf="view.isCompleted == true">Completed</span>
+            <span *ngIf="view.isCompleted == false">Active</span>
+        </p>
+    </div>
+</div>

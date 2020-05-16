@@ -1,0 +1,17 @@
+<div class="buttonlayout">
+    <button (click)="emit()">{{showBtn}} All</button>
+    <button type="submit" form="TodoForm" (click)="save()">Save</button>
+</div>
+<br>
+<div class="center">
+    <!-- form for the add todo -->
+    <form id="TodoForm" [formGroup]="addTodoForm">
+        <input type="text" formControlName="title" placeholder="Title" size="55">
+        <br>
+        <br>
+        <textarea formControlName="description" placeholder="Add description" rows="4" cols="52"></textarea>
+        <br>
+        <br> Due Date : <input type="date" [min]="currentDate" formControlName="dueDate"> &nbsp; Due Time :
+        <input type="time" formControlName="dueTime">
+    </form>
+</div>

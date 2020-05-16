@@ -1,0 +1,9 @@
+<nav>
+    <div>Todo</div>
+</nav>
+<!-- to togggle betwween two components -->
+<!-- view all component -->
+<app-viewall *ngIf="showBtn == 'Add'" [showBtn]="showBtn" (show)="outputemit($event)"></app-viewall>
+<!-- add component -->
+<app-add-component *ngIf="showBtn == 'View'" [showBtn]="showBtn" (show)="outputemit($event)"></app-add-component>
+<router-outlet></router-outlet>

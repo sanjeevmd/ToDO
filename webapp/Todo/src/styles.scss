@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+.buttonlayout {
+    padding-top: 1%;
+    padding-right: 1%;
+    button {
+        float: right;
+        margin-right: 1%;
+        border-radius: 2px solid;
+        padding-bottom: .5%;
+        padding-top: .5%
+    }
+    button:hover {
+        cursor: pointer;
+    }
+}
